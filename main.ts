@@ -9,7 +9,7 @@ namespace Grove_Ultrasonic_Ranger
      * Measure distance in centimeters
      * @param pin signal pin of ultrasonic ranger module
      */
-    //% blockId=ultrasonic_centimeters block="%strip|distance in cm|%pin"
+    //% blockId=ultrasonic_centimeters block="distance in cm|%pin"
     export function measureInCentimeters(pin: DigitalPin): number
     {
         let duration = 0;
@@ -32,7 +32,7 @@ namespace Grove_Ultrasonic_Ranger
      * Measure distance in inches
      * @param pin signal pin of ultrasonic ranger module
      */
-    //% blockId=ultrasonic_inches block="%strip|distance in inch|%pin"
+    //% blockId=ultrasonic_inches block="distance in inch|%pin"
     export function measureInInches(pin: DigitalPin): number
     {
         let duration = 0;
