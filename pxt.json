@@ -1,7 +1,7 @@
 {
     "name": "Grove - Ultrasonic Ranger",
-    "version": "0.0.0",
-    "description": "Driver for Seeed Studio Grove - Ultrasonic Ranger",
+    "version": "0.1.0",
+    "description": "A PXT package for Seeed Studio Grove - Ultrasonic Ranger",
     "license": "MIT",
     "dependencies": {
         "core": "*",
