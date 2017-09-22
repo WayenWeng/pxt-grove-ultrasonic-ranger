@@ -14,7 +14,7 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
-        let buf: Buffer = pins.createBuffer(5);
+        let buf: number [5] = [0, 0, 0, 0, 0];
         let num = 0;
         
         for(let i = 0; i < 5; i ++)
@@ -25,19 +25,19 @@ namespace Grove_Ultrasonic_Ranger
             control.waitMicros(5);
             pins.digitalWritePin(pin, 0);
             
-            duration = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
         }
         
-        // for(let i = 0; i < 5; i ++)
-        // {
-            // if(buf[i] != 0)
-            // {
-                // duration = duration + buf[i];
-                // num ++;
-            // }
-        // }
+        for(let i = 0; i < 5; i ++)
+        {
+            if(buf[i] != 0)
+            {
+                duration = duration + buf[i];
+                num ++;
+            }
+        }
         
-        // duration = duration / num;
+        duration = duration / num;
         RangeInCentimeters = duration * 153 / 29 / 2 / 100;
         
         return RangeInCentimeters;
@@ -52,7 +52,7 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
-        let buf: Buffer = pins.createBuffer(5);
+        let buf: number [5] = [0, 0, 0, 0, 0];
         let num = 0;
         
         for(let i = 0; i < 5; i ++)
@@ -63,19 +63,19 @@ namespace Grove_Ultrasonic_Ranger
             control.waitMicros(5);
             pins.digitalWritePin(pin, 0);
             
-            duration = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
         }
         
-        // for(let i = 0; i < 5; i ++)
-        // {
-            // if(buf[i] != 0)
-            // {
-                // duration = duration + buf[i];
-                // num ++;
-            // }
-        // }
+        for(let i = 0; i < 5; i ++)
+        {
+            if(buf[i] != 0)
+            {
+                duration = duration + buf[i];
+                num ++;
+            }
+        }
         
-        // duration = duration / num;
+        duration = duration / num;
         RangeInCentimeters = duration * 153 / 74 / 2 / 100;
         
         return RangeInCentimeters;
