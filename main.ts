@@ -16,9 +16,11 @@ namespace Grove_Ultrasonic_Ranger
         let RangeInCentimeters = 0;
         
         pins.digitalWritePin(pin, 0);
-        control.waitMicros(2);
+        // control.waitMicros(2);
+        control.waitMicros(200);
         pins.digitalWritePin(pin, 1);
-        control.waitMicros(5);
+        // control.waitMicros(5);
+        control.waitMicros(15);
         pins.digitalWritePin(pin, 0);
         
         duration = pins.pulseIn(pin, PulseValue.High);
@@ -39,9 +41,11 @@ namespace Grove_Ultrasonic_Ranger
         let RangeInCentimeters = 0;
         
         pins.digitalWritePin(pin, 0);
-        control.waitMicros(2);
+        // control.waitMicros(2);
+        control.waitMicros(200);
         pins.digitalWritePin(pin, 1);
-        control.waitMicros(5);
+        // control.waitMicros(5);
+        control.waitMicros(15);
         pins.digitalWritePin(pin, 0);
         
         duration = pins.pulseIn(pin, PulseValue.High);
