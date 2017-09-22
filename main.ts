@@ -25,20 +25,19 @@ namespace Grove_Ultrasonic_Ranger
             control.waitMicros(5);
             pins.digitalWritePin(pin, 0);
             
-            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+            duration = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
         }
         
-        for(let i = 0; i < 5; i ++)
-        {
-            if(buf[i] != 0)
-            {
-                duration = duration + buf[i];
-                num ++;
-            }
-        }
+        // for(let i = 0; i < 5; i ++)
+        // {
+            // if(buf[i] != 0)
+            // {
+                // duration = duration + buf[i];
+                // num ++;
+            // }
+        // }
         
         // duration = duration / num;
-        duration = buf[0];
         RangeInCentimeters = duration * 153 / 29 / 2 / 100;
         
         return RangeInCentimeters;
@@ -64,20 +63,19 @@ namespace Grove_Ultrasonic_Ranger
             control.waitMicros(5);
             pins.digitalWritePin(pin, 0);
             
-            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+            duration = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
         }
         
-        for(let i = 0; i < 5; i ++)
-        {
-            if(buf[i] != 0)
-            {
-                duration = duration + buf[i];
-                num ++;
-            }
-        }
+        // for(let i = 0; i < 5; i ++)
+        // {
+            // if(buf[i] != 0)
+            // {
+                // duration = duration + buf[i];
+                // num ++;
+            // }
+        // }
         
         // duration = duration / num;
-        duration = buf[0];
         RangeInCentimeters = duration * 153 / 74 / 2 / 100;
         
         return RangeInCentimeters;
