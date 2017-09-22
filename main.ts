@@ -14,7 +14,7 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
-        let buf: number [5] = [0, 0, 0, 0, 0];
+        let buf: number [] = [0, 0, 0, 0, 0];
         let num = 0;
         
         for(let i = 0; i < 5; i ++)
@@ -52,7 +52,7 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
-        let buf: number [5] = [0, 0, 0, 0, 0];
+        let buf: number [] = [0, 0, 0, 0, 0];
         let num = 0;
         
         for(let i = 0; i < 5; i ++)
