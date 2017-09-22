@@ -14,17 +14,30 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
+        let buf: Buffer = pins.createBuffer(5);
+        let num = 0;
         
-        pins.digitalWritePin(pin, 0);
-        // control.waitMicros(2);
-        control.waitMicros(200);
-        pins.digitalWritePin(pin, 1);
-        // control.waitMicros(5);
-        control.waitMicros(15);
-        pins.digitalWritePin(pin, 0);
+        for(let i = 0; i < 5; i ++)
+        {
+            pins.digitalWritePin(pin, 0);
+            control.waitMicros(2);
+            pins.digitalWritePin(pin, 1);
+            control.waitMicros(5);
+            pins.digitalWritePin(pin, 0);
+            
+            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+        }
         
-        duration = pins.pulseIn(pin, PulseValue.High);
+        for(let i = 0; i < 5; i ++)
+        {
+            if(buf[i] != 0)
+            {
+                duration = duration + buf[i];
+                num ++;
+            }
+        }
         
+        duration = duration / num;
         RangeInCentimeters = duration * 153 / 29 / 2 / 100;
         
         return RangeInCentimeters;
@@ -39,16 +52,30 @@ namespace Grove_Ultrasonic_Ranger
     {
         let duration = 0;
         let RangeInCentimeters = 0;
+        let buf: Buffer = pins.createBuffer(5);
+        let num = 0;
         
-        pins.digitalWritePin(pin, 0);
-        // control.waitMicros(2);
-        control.waitMicros(200);
-        pins.digitalWritePin(pin, 1);
-        // control.waitMicros(5);
-        control.waitMicros(15);
-        pins.digitalWritePin(pin, 0);
+        for(let i = 0; i < 5; i ++)
+        {
+            pins.digitalWritePin(pin, 0);
+            control.waitMicros(2);
+            pins.digitalWritePin(pin, 1);
+            control.waitMicros(5);
+            pins.digitalWritePin(pin, 0);
+            
+            buf[i] = pins.pulseIn(pin, PulseValue.High, 100000); // Max duration 100 ms
+        }
         
-        duration = pins.pulseIn(pin, PulseValue.High);
+        for(let i = 0; i < 5; i ++)
+        {
+            if(buf[i] != 0)
+            {
+                duration = duration + buf[i];
+                num ++;
+            }
+        }
+        
+        duration = duration / num;
         
         RangeInCentimeters = duration * 153 / 74 / 2 / 100;
         
