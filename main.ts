@@ -37,7 +37,8 @@ namespace Grove_Ultrasonic_Ranger
             }
         }
         
-        duration = duration / num;
+        // duration = duration / num;
+        duration = buf[0];
         RangeInCentimeters = duration * 153 / 29 / 2 / 100;
         
         return RangeInCentimeters;
@@ -75,8 +76,8 @@ namespace Grove_Ultrasonic_Ranger
             }
         }
         
-        duration = duration / num;
-        
+        // duration = duration / num;
+        duration = buf[0];
         RangeInCentimeters = duration * 153 / 74 / 2 / 100;
         
         return RangeInCentimeters;
